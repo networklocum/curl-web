@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-6 col-sm-4 col-md-3">
+        <a class="btn btn-success" ui-sref="dashboard.import.curl">Create new query</a>
+
+        <div ng-if="queries.length">
+            <h1>Queries</h1>
+            <list-queries queries="queries"/>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-8 col-md-9">
+        <div ui-view></div>
+    </div>
+</div>

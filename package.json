@@ -1,0 +1,45 @@
+{
+  "name": "curl_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --config webpack.conf.js",
+    "build:watch": "npm run build -- --watch",
+    "server": "http-server dist/"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "babel-loader": "^6",
+    "copy-webpack-plugin": "^3.0.1",
+    "http-server": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.12.2",
+    "ui-router": "^1.0.0-alpha.3",
+    "webpack": "^1.9.7"
+  }
+}
