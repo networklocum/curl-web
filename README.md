@@ -4,6 +4,11 @@
 
 Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 
+<img width="1440" alt="screen shot 2016-09-28 at 17 32 24" src="https://cloud.githubusercontent.com/assets/543507/18924458/361af0b2-85a8-11e6-9647-6aac93aa218f.png">
+
+
+<img width="873" alt="screen shot 2016-09-28 at 17 33 27" src="https://cloud.githubusercontent.com/assets/543507/18924455/331cc6ba-85a8-11e6-9404-03294f4070e5.png">
+
 
 ## Tasks
 
@@ -11,7 +16,7 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 ### Level 1
 
 - [ ] Improve the design of the list of available queries (left side)
-- [ ] Improve the design of the Query View ()
+- [ ] Improve the design of the Query View
 - [ ] Can edit the name of the queries (currently it is `query.method + query.url`)
 - [ ] Can clone queries
 - [ ] Persist queries on localstorage
@@ -41,6 +46,8 @@ context = {
     environment: "production"
 }
 ```
+
+![Postman environments](https://cloud.githubusercontent.com/assets/543507/18924582/9ed20b90-85a8-11e6-8fe6-3b6ae84494ae.png)
 
 - [ ] Add groups of queries
 - [ ] Add Query History
