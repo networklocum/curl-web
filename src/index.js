@@ -1,7 +1,7 @@
 require("angular")
 require("angular-ui-router")
-require("jsonFormatter")
-require("jsonFormatter/dist/json-formatter.min.css")
+require("jsonformatter")
+require("jsonformatter/dist/json-formatter.min.css")
 
 const app = angular.module("app", [
     "ui.router",
