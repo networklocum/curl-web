@@ -4,6 +4,11 @@ export const QueryBuilder = function QueryBuilderFactory() {
     const queries = []
     const queries_idx = {}
 
+    // sample
+    // http://jsonplaceholder.typicode.com/
+    createQueryFromCurl(`curl 'http://jsonplaceholder.typicode.com/posts/1' `)
+    createQueryFromCurl(`curl 'http://jsonplaceholder.typicode.com/posts/' -d '{"x":true}'`)
+
     return {
         createQueryFromCurl,
         getQuery,
@@ -20,8 +25,14 @@ export const QueryBuilder = function QueryBuilderFactory() {
         const query = {
             id: generateID(),
             name: curl.method+" "+curl.url,
-            headers: curl.headers,
-            data: curl.data.ascii,
+            headers: {
+                // example of function as value
+                timestamp: (context) => {
+                    return context.value
+                },
+                ...curl.headers
+            },
+            body: curl.data.ascii,
             method: curl.method,
             url: curl.url
         }
@@ -39,7 +50,7 @@ export const QueryBuilder = function QueryBuilderFactory() {
 
 
 /* @todo https://github.com/broofa/node-uuid */
+let UID = 0
 function generateID() {
-    return String(Date.now()).slice(8)
-
+    return UID++
 }

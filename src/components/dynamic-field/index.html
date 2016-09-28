@@ -1,0 +1,10 @@
+<td>
+    <i class="fa fa-remove" ng-click="remove()"></i>
+</td>
+<td><label>{{name}}</label></td>
+<td>
+    <span ng-switch="type">
+        <span ng-switch-when="function" class="label label-default">fn: {{field.name}}()</span>
+        <span ng-switch-default><input ng-model="field" placeholder="123" /></span>
+    </span>
+</td>

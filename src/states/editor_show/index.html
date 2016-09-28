@@ -1,1 +1,43 @@
-{{query | json}}
+<form name="$form" promise="promise" ng-submit="promise = trigger()">
+    <h1>{{query.name}}</h1>
+    <div>
+        <select ng-options="item as item for item in ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']" ng-model="query.method"></select>
+        <input ng-model="query.url" placeholder="https://google.com"/>
+        <button class="btn btn-success btn-xs" ng-disabled="promise.isLoading">
+            <i class="fa fa-play" ng-if="!promise.isLoading"></i>
+            <span loader="promise.isLoading"></span>
+            Trigger
+        </button>
+    </div>
+</form>
+<div>
+
+<div><span class="btn btn-link" ng-click="_.content = 'headers'" ng-class="{active: _.content == 'headers'}">Headers</span> <!-- <span class="btn btn-link" ng-click="_.content = 'params'" ng-class="{active: _.content == 'params'}">Params</span> --> <span class="btn btn-link" ng-click="_.content = 'body'" ng-class="{active: _.content == 'body'}">Body</span></div>
+
+<div ng-if="_.content == 'headers'">
+    <table class="table">
+        <tr ng-repeat="(name,item) in query.headers" dynamic-field="query.headers" name="{{name}}"></tr>
+    </table>
+
+    <form name="$form_addHeader" ng-init="form_addHeader = {}" ng-submit="promise = query.headers[form_addHeader.name] = form_addHeader.value; form_addHeader = {}">
+        <input ng-model="form_addHeader.name" placeholder="X-Name" />
+        <input ng-model="form_addHeader.value" placeholder="123" />
+        <button type="submit" class="btn btn-success btn-xs" >add</button>
+    </form>
+</div>
+<!-- we don't support get params yet -->
+<!-- <div ng-if="_.content == 'params'">
+    <div ng-repeat="(name,item) in query.params" dynamic-field="query.params" name="{{name}}"></div>
+
+    <form name="$form_addParam" ng-init="form_addParam = {}">
+        <input ng-model="form_addParam.name" placeholder="X-Name" />
+        <input ng-model="form_addParam.value" placeholder="123" />
+        <button type="submit" class="btn btn-success btn-xs" ng-click="query.params[form_addParam.name] = form_addParam.value; form_addParam = {}">add</button>
+    </form>
+</div> -->
+<div ng-if="_.content == 'body'">
+    <textarea ng-model="query.body" placeholder='{"a": true}' rows="5" class="form-control"></textarea>
+</div>
+
+
+<div response="response" ng-if="response"></div>

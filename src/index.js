@@ -1,9 +1,11 @@
 require("angular")
 require("angular-ui-router")
-
+require("jsonFormatter")
+require("jsonFormatter/dist/json-formatter.min.css")
 
 const app = angular.module("app", [
-    "ui.router"
+    "ui.router",
+    "jsonFormatter"
 ])
 
 // initialize our modules
@@ -15,3 +17,6 @@ states(app)
 
 import components from "./components"
 components(app)
+
+
+require("./styles/index.less")

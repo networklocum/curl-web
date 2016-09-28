@@ -34,7 +34,7 @@ function getSamples() {
             expected: {
                 url: "http://localhost:8080",
                 method: "POST",
-                headers: [],
+                headers: {},
                 data: '{"resources": ["*sessions.*applications.locum.>properties"], "params": {"*sessions": {"status": "filled"}}}'
             }
         },
@@ -43,7 +43,18 @@ function getSamples() {
             expected: {
                 url: "google.com",
                 method: "GET",
-                headers: []
+                headers: {}
+            }
+        },
+        {
+            command: `curl google.com -H "Authorization: true" -H "another: 123"`,
+            expected: {
+                url: "google.com",
+                method: "GET",
+                headers: {
+                    Authorization: "true",
+                    another: "123"
+                }
             }
         }
     ]
