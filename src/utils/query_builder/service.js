@@ -6,8 +6,8 @@ export const QueryBuilder = function QueryBuilderFactory() {
 
     // sample
     // http://jsonplaceholder.typicode.com/
-    createQueryFromCurl(`curl 'http://jsonplaceholder.typicode.com/posts/1' `)
-    createQueryFromCurl(`curl 'http://jsonplaceholder.typicode.com/posts/' -d '{"x":true}'`)
+    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/1' `)
+    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/' -d '{"x":true}'`)
 
     return {
         createQueryFromCurl,
