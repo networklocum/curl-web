@@ -24,7 +24,7 @@ export const QueryBuilder = function QueryBuilderFactory() {
 
         const query = {
             id: generateID(),
-            name: curl.method+" "+curl.url,
+            name: curl.method+" "+curl.url.match(/^https?:\/\/([^\/]*)/)[1],
             headers: {
                 // example of function as value
                 timestamp: (context) => {

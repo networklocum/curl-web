@@ -7,4 +7,6 @@ export default app => {
             template: require("./index.html")
         }
     })
+
+    require("./index.less")
 }
