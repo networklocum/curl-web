@@ -4,10 +4,10 @@
 
 Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 
-<img width="1440" alt="screen shot 2016-09-28 at 17 32 24" src="https://cloud.githubusercontent.com/assets/543507/18924458/361af0b2-85a8-11e6-9647-6aac93aa218f.png">
+<img width="1429" alt="screen shot 2016-09-29 at 09 20 24" src="https://cloud.githubusercontent.com/assets/543507/18946304/2ad82fac-8626-11e6-8d4b-5ac492831c4f.png">
 
+<img width="784" alt="screen shot 2016-09-29 at 09 20 45" src="https://cloud.githubusercontent.com/assets/543507/18946301/2863c394-8626-11e6-96af-a10aaae813b8.png">
 
-<img width="873" alt="screen shot 2016-09-28 at 17 33 27" src="https://cloud.githubusercontent.com/assets/543507/18924455/331cc6ba-85a8-11e6-9404-03294f4070e5.png">
 
 
 ## Tasks
@@ -47,19 +47,23 @@ context = {
 }
 ```
 
+This is how postman do it
 ![Postman environments](https://cloud.githubusercontent.com/assets/543507/18924582/9ed20b90-85a8-11e6-8fe6-3b6ae84494ae.png)
 
 - [ ] Add groups of queries
 - [ ] Add Query History
  - [ ] list of recently triggered queries
  - [ ] last status of a query
+- [ ] separate GET params from URL
+- [ ] use flexbox instead of float-left or col-xx-n
+
 
 ### Level 3
 
 - [ ] Dynamic headers/params (`function(context, queries)`)
 - [ ] pre-request scripts ( can trigger other queries and the result would be set in the context, useful to get a token before doing an API call )
 - [ ] Oauth authentication
-- [ ] shareable
+- [ ] shareable (via link)
 
 
 
