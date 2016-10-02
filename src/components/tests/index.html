@@ -1,0 +1,12 @@
+<div>
+    <div ng-repeat="test in tests.tests" ng-class="{'text-danger': test.error}">
+
+         <code class="code" ng-class="{'text-success': !test.error}">
+            <span ng-if="test.error"><i class="fa fa-times"></i></span>
+            <span ng-if="!test.error"><i class="fa fa-check"></i></span>
+
+            {{test.expression}}
+        </code>
+        <small><br />{{test.error.message}}</small>
+    </div>
+</div>
