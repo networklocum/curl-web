@@ -3,6 +3,7 @@ require("angular-ui-router")
 require("jsonformatter")
 require("jsonformatter/dist/json-formatter.min.css")
 require("angular-uuid")
+require('lodash')
 
 const app = angular.module("app", [
     "ui.router",

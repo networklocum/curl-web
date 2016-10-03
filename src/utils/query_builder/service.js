@@ -1,11 +1,6 @@
 import {parse} from "./helper"
 
 export const QueryBuilder = function QueryBuilderFactory(QueryStorage) {
-    // sample
-    // http://jsonplaceholder.typicode.com/
-    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/1' `)
-    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/' -d '{"x":true}'`)
-
     return {
         createQueryFromCurl
     }
