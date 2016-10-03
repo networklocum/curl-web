@@ -1,3 +1,3 @@
-export default function DashboardController($scope, QueryBuilder) {
-    $scope.queries = QueryBuilder.queries
+export default function DashboardController($scope, QueryStorage) {
+    $scope.queries = QueryStorage.queries
 }

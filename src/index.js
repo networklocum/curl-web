@@ -2,10 +2,12 @@ require("angular")
 require("angular-ui-router")
 require("jsonformatter")
 require("jsonformatter/dist/json-formatter.min.css")
+require("angular-uuid")
 
 const app = angular.module("app", [
     "ui.router",
-    "jsonFormatter"
+    "jsonFormatter",
+    "angular-uuid"
 ])
 
 // initialize our modules
@@ -18,5 +20,7 @@ states(app)
 import components from "./components"
 components(app)
 
+import run from './app.run'
+run(app)
 
 require("./styles/index.less")
