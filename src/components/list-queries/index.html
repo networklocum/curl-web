@@ -1,3 +1,6 @@
-<div class="dynamic-field">
-    <div ng-repeat="query in queries" ui-sref="editor.show({id: query.id})" class="query">{{query.name}}</div>
-</div>
+<ul class="dynamic-field">
+    <li ng-repeat="query in queries" ui-sref="editor.show({id: query.id})" class="query">
+      <span class="{{ query.method | labelize}}">{{ query.method }}</span>
+      <span>{{query.url}}</span>
+    </li>
+</ul>
