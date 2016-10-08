@@ -1,3 +1,3 @@
-export default function EditorController($scope, QueryBuilder) {
-    $scope.queries = QueryBuilder.queries
+export default function EditorController($scope, QueryStorage) {
+    $scope.queries = QueryStorage.queries
 }
