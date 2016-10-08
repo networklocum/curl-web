@@ -34,7 +34,10 @@ export const QueryBuilder = function QueryBuilderFactory() {
             },
             body: curl.data.ascii,
             method: curl.method,
-            url: curl.url
+            url: curl.url,
+            tests: `expect(data.status).to.equal(200)
+
+                    expect(data.data.id).to.equal(1)`.replace(/[ \t]*/g, "")
         }
 
         queries.push(query)
