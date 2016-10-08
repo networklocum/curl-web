@@ -19,7 +19,7 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 - [ ] Improve the design of the Query View
 - [ ] Can edit the name of the queries (currently it is `query.method + query.url`)
 - [ ] Can clone queries
-- [ ] Persist queries on localstorage
+- [x] Persist queries on localstorage
 
 
 ### Level 2
@@ -27,7 +27,7 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 - [ ] Add a global context
  - [ ] Choose / manage environments (ie. default hostname)
  - [ ] Choose / manage profiles (ie. user token )
- - [ ] Persisted on localstorage
+ - [ ] Persisted on localstorage
 
 A simplified version of the context would look like this:
 ```
@@ -50,7 +50,10 @@ context = {
 This is how postman do it
 ![Postman environments](https://cloud.githubusercontent.com/assets/543507/18924582/9ed20b90-85a8-11e6-8fe6-3b6ae84494ae.png)
 
-- [ ] Add groups of queries
+- [ ] Can lock queries (no further change on url & headers & params can be made unless you clone it)
+- [ ] Create groups of queries
+ - [ ] Automatically group queries by hostname
+ - [ ] Create a new group manually and add queries to it
 - [ ] Add Query History
  - [ ] list of recently triggered queries
  - [ ] last status of a query
