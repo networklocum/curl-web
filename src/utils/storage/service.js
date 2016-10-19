@@ -1,4 +1,4 @@
-export const QueryStorage = function QueryStorageFactory (uuid) {
+export const QueryStorage = function QueryStorageFactory (uuid, QueryBuilder) {
   const storageId = "curl-web-queries"
   let queries = [];
 
@@ -20,6 +20,8 @@ export const QueryStorage = function QueryStorageFactory (uuid) {
     if(!store.queries) {
       store.queries = []
     }
+
+    store.queries = store.queries.map(QueryBuilder.restaureQuery)
   }
 
   function add(query) {
