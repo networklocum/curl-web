@@ -1,7 +1,7 @@
 <h1>Import a curl query</h1>
 
 <form name="$form" ng-submit="import(form.curl_string)">
-    <textarea ng-model="form.curl_string" placeholder="curl google.com" rows="5" class="form-control"></textarea>
+    <textarea ng-model="form.curl_string" placeholder="curl https://jsonplaceholder.typicode.com/posts/1" rows="5" class="form-control"></textarea>
     <p>
         <button class="btn btn-success" ng-disabled="$form.$invalid">Import</button>
     </p>
