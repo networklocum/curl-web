@@ -9,6 +9,6 @@ export default app => {
 }
 
 function AppConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise("/dashboard")
 }
