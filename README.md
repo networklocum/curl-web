@@ -8,8 +8,6 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 
 <img width="784" alt="screen shot 2016-09-29 at 09 20 45" src="https://cloud.githubusercontent.com/assets/543507/18946301/2863c394-8626-11e6-96af-a10aaae813b8.png">
 
-
-
 ## Tasks
 
 
@@ -17,17 +15,16 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 
 - [ ] Improve the design of the list of available queries (left side)
 - [ ] Improve the design of the Query View
-- [ ] Can edit the name of the queries (currently it is `query.method + query.url`)
+- [ ] Can edit the name of the queries
 - [ ] Can clone queries
-- [x] Persist queries on localstorage
+- [x] Persist queries on localStorage
 
 
 ### Level 2
 
 - [ ] Add a global context
  - [x] Choose / manage environments (ie. default hostname)
- - [ ] Choose / manage profiles (ie. user token )
- - [ ] Persisted on localstorage
+ - [x] Persisted on localstorage
 - [ ] Can lock queries (no further change on url & headers & params can be made unless you clone it)
 - [ ] Create groups of queries
  - [ ] Automatically group queries by hostname
@@ -35,7 +32,7 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 - [ ] Add Query History
  - [ ] list of recently triggered queries
  - [ ] last status of a query
-- [ ] separate GET params from URL
+- [ ] separate GET params from URL (we should be able to edit them like we do for headers)
 - [ ] use flexbox instead of float-left or col-xx-n
 - [ ] add tabs: ability to add new tabs to edit queries
 
@@ -54,12 +51,13 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 - [ ] use redux to handle queries manipulations
 - [ ] ctrl-z [depends on redux]
 
-- [ ] fix the cors issue ( ie. create node/nginx proxy )
+- [x] fix the cors issue ( ie. create node/nginx proxy ) (sneaky fix: using electron)
 
 - [ ] tests
+ - [x] basic support (testing status code, content)
  - [ ] JSONschema
  - [ ] check any variable (like response time, size …)
- - [ ] full suite ( ie. full group of queries )
+ - [ ] full suite ( ie. run all queries and their tests in one go )
 
 
 ## Rules
@@ -73,24 +71,14 @@ Another [postman](https://www.getpostman.com/) or [paw](https://paw.cloud)
 ## How to setup
 
 ```
-git clone https://github.com/marg51/curl-web.git
+git clone https://github.com/networklocum/curl-web.git
 cd curl-web
-npm install
+npm install # this can take a while, thanks npm + electron (:
 npm run build
-npm start
+npm start # will start an electron app
 ```
 
-At this point, you can open your browser at http://localhost:8080 and it should work.
-
-If you get a 404 when you reload, go the root URL everytime.
-
-If you don't want that to happen, you can use the attached nginx.conf. Don't forget to update the path (line 8 of nginx.conf)
-
-If you're on linux, add it to `/etc/nginx/conf.d/`
-If you're on mac, add it to `/usr/local/etc/nginx/conf.d/`
-
-if nginx is already started: `sudo nginx -s reload` or `sudo nginx`
-
+you should run `npm run build:watch` in another tab so that your changes are taken into account.
 
 ### Other commands
 
