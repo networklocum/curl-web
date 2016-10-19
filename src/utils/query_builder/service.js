@@ -31,7 +31,7 @@ export const QueryBuilder = function QueryBuilderFactory() {
 
         }
 
-        return QueryStorage.add(query)
+        return query
     }
 
     function restaureQuery(query) {

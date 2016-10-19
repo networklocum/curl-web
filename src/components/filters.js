@@ -1,9 +1,9 @@
 function LabelizeFilter () {
-  return method => {
+  return (method = "") => {
     let out = "label ";
-    
+
     switch (method.toUpperCase()) {
-      case "GET": 
+      case "GET":
         out += "label-success";
         break
       case "POST":
