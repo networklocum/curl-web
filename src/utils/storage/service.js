@@ -15,11 +15,10 @@ export const QueryStorage = function QueryStorageFactory (uuid) {
   }
 
   function fetch() {
-    try {
-      store.queries = angular.fromJson(localStorage.getItem(storageId));
-    } catch (e) {
-      console.error("Error while retrieving queries from localStorage", e);
-      store.queries = [];
+    store.queries = angular.fromJson(localStorage.getItem(storageId));
+
+    if(!store.queries) {
+      store.queries = []
     }
   }
 
@@ -33,7 +32,7 @@ export const QueryStorage = function QueryStorageFactory (uuid) {
 
   function remove(queryUUID) {
     store.queries.splice(_.findIndex(store.queries, { id: queryUUID }), 0);
-    _save(); 
+    _save();
   }
 
   function get(queryUUID) {
