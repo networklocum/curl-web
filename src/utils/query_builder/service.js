@@ -1,18 +1,8 @@
 import {parse} from "./helper"
 
-export const QueryBuilder = function QueryBuilderFactory() {
-    const queries = []
-    const queries_idx = {}
-
-    // sample
-    // http://jsonplaceholder.typicode.com/
-    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/1' `)
-    createQueryFromCurl(`curl 'https://jsonplaceholder.typicode.com/posts/' -d '{"x":true}'`)
-
+export const QueryBuilder = function QueryBuilderFactory(QueryStorage) {
     return {
-        createQueryFromCurl,
-        getQuery,
-        queries
+        createQueryFromCurl
     }
 
     /** Create a new query from a curl command
@@ -22,9 +12,9 @@ export const QueryBuilder = function QueryBuilderFactory() {
         // @throw if the string is not a curl command
         const curl = parse(curl_string)
 
-        const query = {
-            id: generateID(),
-            name: curl.method+" "+curl.url.match(/^https?:\/\/([^\/]*)/)[1],
+        let query = {
+            /* name: curl.method+" "+curl.url.match(/^https?:\/\/([^\/]*)/)[1], */
+            name: curl.url,
             headers: {
                 // example of function as value
                 timestamp: (context) => {
@@ -36,21 +26,7 @@ export const QueryBuilder = function QueryBuilderFactory() {
             method: curl.method,
             url: curl.url
         }
-
-        queries.push(query)
-        queries_idx[query.id] = query
-
-        return query
+        // Storage will add UUID to the query obj
+        return QueryStorage.add(query);
     }
-
-    function getQuery(id) {
-        return queries_idx[id]
-    }
-}
-
-
-/* @todo https://github.com/broofa/node-uuid */
-let UID = 0
-function generateID() {
-    return UID++
 }

@@ -1,7 +1,7 @@
-export default function EditorShowController($scope, QueryBuilder, QueryRunner, $stateParams, $http) {
+export default function EditorShowController($scope, QueryRunner, QueryStorage, $stateParams, $http) {
     $scope._ = {}
 
-    $scope.query = QueryBuilder.getQuery($stateParams.id)
+    $scope.query = QueryStorage.get($stateParams.id)
 
     $scope.trigger = () => {
         delete $scope.response
